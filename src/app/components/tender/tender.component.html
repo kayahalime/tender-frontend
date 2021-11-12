@@ -1,0 +1,18 @@
+<h3>tender</h3>
+
+<table>
+    <tr>
+        <td>tender id-</td>
+        <br><br>
+        <td>category id-</td>
+        <br><br>
+        <td>price</td>
+    </tr>
+    <tr *ngFor="let tender of tenders">
+        <td>{{tender.tenderId}}</td>
+        <br><br>
+        <td>{{tender.categoryId}}</td>
+        <br><br>
+        <td>{{tender.price}}</td>
+    </tr>
+</table>
