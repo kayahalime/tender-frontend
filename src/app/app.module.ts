@@ -14,6 +14,10 @@ import { ClientComponent } from './components/client/client.component';
 import { ImageComponent } from './components/image/image.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { CategoryPipe } from './pipes/category.pipe';
+import { CategoryFilterComponent } from './components/category-filter/category-filter.component';
+import { FormsModule } from '@angular/forms';
+import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -26,13 +30,17 @@ import { RegisterComponent } from './components/register/register.component';
     ClientComponent,
     ImageComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CategoryPipe,
+    CategoryFilterComponent,
+    FilterPipePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

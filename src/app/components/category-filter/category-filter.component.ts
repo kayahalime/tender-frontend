@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Category } from 'src/app/models/category';
+import { Category } from 'src/app/models/category';   
+import { CategoryPipe } from 'src/app/pipes/category.pipe';
 import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
-  selector: 'app-category',
-  templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css']
+  selector: 'app-category-filter',
+  templateUrl: './category-filter.component.html',
+  styleUrls: ['./category-filter.component.css']
 })
-export class CategoryComponent implements OnInit {
-
+export class CategoryFilterComponent implements OnInit {
+  
   categories: Category[]=[];
   dataLoaded =false;
-  currentCategory: Category = {categoryId:-1, categoryName:''};
+  currentCategory: Category = {categoryId:-1, categoryName:""};
   filterText = "";
   
   constructor(private categoryService: CategoryService,private activatedRoute:ActivatedRoute,private router:Router) { }
@@ -57,4 +58,5 @@ export class CategoryComponent implements OnInit {
     }
   }
   
+
 }

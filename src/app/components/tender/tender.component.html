@@ -1,4 +1,4 @@
-<h3>tender</h3>
+<!-- <h3>tender</h3>
 
 <table>
     <tr>
@@ -15,4 +15,17 @@
         <br><br>
         <td>{{tender.price}}</td>
     </tr>
-</table>
+</table> -->
+
+<div
+    class="col-12 col-sm-11 col-md-9 col-lg-5 col-xl-4"
+    *ngFor="let tender of tenders "
+    style="width: 15rem; padding: 5px; margin: 5px"
+>
+    <li class="list-group-item">
+        <b>Price:</b
+        ><span style="float: right"> {{ tender.price }}</span>
+    </li>
+    <li class="list-group-item">
+        <b>category id:</b><span style="float: right">{{ tender.categoryId }}</span>
+    </li>
