@@ -7,4 +7,6 @@ export interface Tender{
     active:boolean;
     startinDate:Date;
     endDate:Date;
+    job: string;
+    corparation: string;
   }

@@ -31,7 +31,7 @@ export class CategoryFilterComponent implements OnInit {
   getByFilter(categoryId:number){
     
     
-     this.router.navigate(["tenders/categoryFilter/"+categoryId]);
+     this.router.navigate(["tenders/category/"+categoryId]);
 
    }
   setCurrentCategory(category:Category){

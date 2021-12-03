@@ -1,0 +1,42 @@
+
+ 
+      <table *ngFor="let tenderdetail of tenderDetails"  class="table table-success table-striped">
+       
+        <tbody >
+          
+          <tr>
+            <th scope="row">Kategori</th>
+            <td>{{ tenderdetail.categoryName }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Fiyat</th>
+            <td>{{ tenderdetail.price }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Durum</th>
+            <td>{{ tenderdetail.active }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Başlangıç Tarihi</th>
+            <td>{{ tenderdetail.startingDate }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Bitiş Tarihi</th>
+            <td>{{ tenderdetail.endDate }}</td>
+          </tr>
+          <tr>
+            <th scope="row">İş Adı</th>
+            <td>{{ tenderdetail.job }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Kurum Adı</th>
+            <td>{{ tenderdetail.corparation }}</td>
+          </tr>
+         
+         
+         
+       
+        </tbody>
+      
+      </table>
+ 

@@ -18,6 +18,7 @@ import { CategoryPipe } from './pipes/category.pipe';
 import { CategoryFilterComponent } from './components/category-filter/category-filter.component';
 import { FormsModule } from '@angular/forms';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import { TenderDetailComponent } from './components/tender-detail/tender-detail.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
     RegisterComponent,
     CategoryPipe,
     CategoryFilterComponent,
-    FilterPipePipe
+    FilterPipePipe,
+    TenderDetailComponent
   ],
   imports: [
     BrowserModule,

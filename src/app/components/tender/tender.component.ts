@@ -19,7 +19,7 @@ export class TenderComponent implements OnInit {
     if(this.activatedRoute.params.subscribe(params=>{
 
       if(params["categoryId"]){
-        this.getTendersByCategory(params["colorId"]);
+        this.getTendersByCategory(params["categoryId"]);
       }
     }))
     this.getTenders();
@@ -45,5 +45,7 @@ export class TenderComponent implements OnInit {
       
     })
   }
+  
+  }
 
-}
+

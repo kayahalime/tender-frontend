@@ -16,7 +16,7 @@ export class CategoryService {
     return this.httpClient.get<ListResponseModel<Category>>(this.apiUrl+"categories/getall");
   }
   getCategoryById(categoryId: number): Observable<SingleResponseModel<Category>> {
-    let newPath = this.apiUrl + 'categories/getbyid?id='+categoryId;
+    let newPath = this.apiUrl + "categories/getbyid?categoryId="+categoryId;
     return this.httpClient.get<SingleResponseModel<Category>>(newPath);
   }
 }

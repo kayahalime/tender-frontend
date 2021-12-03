@@ -21,7 +21,7 @@ export class TenderService {
   getByFilterTenders(categoryId:number):Observable<ListResponseModel<Tender>>{
     
     
-    let newPath=this.apiUrl+"tenders/getbyfiltertender?categoryId="+categoryId;
+    let newPath=this.apiUrl+"tenders/getbyfiltertender?categoryId="+categoryId
     
     
     return this.httpClient.get<ListResponseModel<Tender>>(newPath);
