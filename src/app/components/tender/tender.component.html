@@ -35,25 +35,34 @@
     <li class="list-group-item">
         <b>Kurum Adı:</b><span style="float: right">{{ tender.corparation }}</span>
     </li> -->
- 
-    <table class="table table-info table-hover" >
-        <thead>
-            <tr>
-              <th scope="col">Kategori id</th>
-              <th scope="col">Fiyat</th>
-              <th scope="col">İş Adı</th>
-              <th scope="col">Kurum Adı</th>
-              <th scope="col"> </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr  *ngFor="let tender of tenders ">
-              <td scope="row">{{tender.categoryId}}</td>
-              <td>{{tender.price}}</td>
-              <td>{{tender.job}}</td>
-              <td>{{tender.corparation}}</td>
-              <td><button routerLink="/tenders/tenderdetail/{{tender.tenderId }}"  type="button"  class="btn btn-primary">Detaylar</button></td>
-            </tr>
-            
-          </tbody>
-    </table>
+ <div class="container">
+    <div class="row">
+        <div class="col-md-3">
+        
+          <app-category-filter></app-category-filter>
+         
+        </div>
+        <div class="col-md-9">
+            <table class="table table-info table-hover" >
+                <thead>
+                    <tr>
+                    <th scope="col">Kategori id</th>
+                    <th scope="col">Fiyat</th>
+                    <th scope="col">İş Adı</th>
+                    <th scope="col">Kurum Adı</th>
+                    <th scope="col"> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr  *ngFor="let tender of tenders ">
+                    <td scope="row">{{tender.categoryId}}</td>
+                    <td>{{tender.price}}</td>
+                    <td>{{tender.job}}</td>
+                    <td>{{tender.corparation}}</td>
+                    <td><button routerLink="/tenders/tenderdetail/{{tender.tenderId }}"  type="button"  class="btn btn-primary">Detaylar</button></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+</div>

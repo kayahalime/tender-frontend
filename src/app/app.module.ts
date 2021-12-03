@@ -19,6 +19,8 @@ import { CategoryFilterComponent } from './components/category-filter/category-f
 import { FormsModule } from '@angular/forms';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { TenderDetailComponent } from './components/tender-detail/tender-detail.component';
+import { AboutComponent } from './components/about/about.component';
+import { ConcactComponent } from './components/concact/concact.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { TenderDetailComponent } from './components/tender-detail/tender-detail.
     CategoryPipe,
     CategoryFilterComponent,
     FilterPipePipe,
-    TenderDetailComponent
+    TenderDetailComponent,
+    AboutComponent,
+    ConcactComponent
   ],
   imports: [
     BrowserModule,

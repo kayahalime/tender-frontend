@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './components/about/about.component';
 import { BidComponent } from './components/bid/bid.component';
 import { CategoryComponent } from './components/category/category.component';
+import { ConcactComponent } from './components/concact/concact.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 import { TenderDetailComponent } from './components/tender-detail/tender-detail.component';
 import { TenderComponent } from './components/tender/tender.component';
 
@@ -15,6 +18,9 @@ const routes: Routes = [
   {path:"bids",component:BidComponent},
   {path:"tenders/tenderdetail/:tenderId",component:TenderDetailComponent},
   {path:"login",component:LoginComponent},
+  {path:"register",component:RegisterComponent},
+  {path:"about",component:AboutComponent},
+  {path:"contact",component:ConcactComponent},
 
 
 ];
