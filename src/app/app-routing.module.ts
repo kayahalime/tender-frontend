@@ -9,6 +9,8 @@ import { MyProfileComponent } from './components/my-profile/my-profile.component
 import { RegisterComponent } from './components/register/register.component';
 import { TenderDetailComponent } from './components/tender-detail/tender-detail.component';
 import { TenderAddComponent } from './components/tender/tender-add/tender-add.component';
+import { TenderDeleteComponent } from './components/tender/tender-delete/tender-delete.component';
+import { TenderUpdateComponent } from './components/tender/tender-update/tender-update.component';
 import { TenderComponent } from './components/tender/tender.component';
 
 const routes: Routes = [
@@ -25,6 +27,8 @@ const routes: Routes = [
   {path:"contact",component:ConcactComponent},
   {path:"my-profile",component:MyProfileComponent},
   {path:"tender/add",component:TenderAddComponent},
+  {path:"tender/update",component:TenderUpdateComponent},
+  {path:"tender/delete",component:TenderDeleteComponent},
 
 
 ];

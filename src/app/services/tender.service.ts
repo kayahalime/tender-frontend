@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ListResponseModel } from '../models/listResponseModel';
+import { SingleResponseModel } from '../models/singleResponseModel';
 import { Tender } from '../models/tender';
 
 @Injectable({
@@ -31,5 +32,12 @@ export class TenderService {
   }
   update(tender:Tender){
     return this.httpClient.post(this.apiUrl+"tenders/update",tender)
+  }
+  delete(tender:Tender){
+    return this.httpClient.post(this.apiUrl+"tenders/delete",tender)
+  }
+  getById(tenderId:number){
+    let newPath=this.apiUrl+"tenders/getbyid?tenderId="+tenderId;
+    return this.httpClient.get<SingleResponseModel<Tender>>(newPath);
   }
 }

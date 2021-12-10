@@ -1,0 +1,111 @@
+<div class="content">
+    <div class="col-md-12">
+      <div class="card">
+        <hr />
+        <div class="card-header"><h5 class="title">İhale Bilgileri</h5></div>
+        <div class="card-body">
+          <form [formGroup]="tenderAddForm">
+            <div class="mb-3">
+              <label for="corparation">Kurum Adı</label>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="corparation"
+                  formControlName="corparation"
+                  class="form-control"
+                  placeholder="Kurum"
+                />
+              </div>
+              <label for="active">Aktiflik</label>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="active"
+                  formControlName="active"
+                  class="form-control"
+                  placeholder="Aktif"
+                />
+              </div>
+              <label for="job">İş Adı</label>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="job"
+                  formControlName="job"
+                  class="form-control"
+                  placeholder="İş"
+                />
+              </div>
+              <label for="categoryId">Kategori</label>
+              <label for="categoryId">Kategori</label>
+              
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="categoryId"
+                  formControlName="categoryId"
+                  class="form-control"
+                  placeholder="Kategori"
+                />
+              </div>
+              <label for="AdminId">Admin Id</label>
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="adminId"
+                  formControlName="adminId"
+                  class="form-control"
+                  placeholder="Admin"
+                />
+              </div>
+              <label for="clientId">client Id</label>
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="clientId"
+                  formControlName="clientId"
+                  class="form-control"
+                  placeholder="Client"
+                />
+              </div>
+              <label for="price">Fiyat</label>
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="price"
+                  formControlName="price"
+                  class="form-control"
+                  placeholder="Fiyat"
+                />
+              </div>
+              <label for="startingDate">Başlangıç Tarihi</label>
+              <div class="form-group">
+                <input
+                  type="date"
+                  id="startingDate"
+                  formControlName="startingDate"
+                  class="form-control"
+                  placeholder="Başlangıç Tarihi"
+                />
+              </div>
+              <label for="endDate">Bitiş Tarihi</label>
+              <div class="form-group">
+                <input
+                  type="date"
+                  id="endDate"
+                  formControlName="endDate"
+                  class="form-control"
+                  placeholder="Bitiş Tarihi"
+                />
+              </div>
+            
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="card-footer">
+          <button class="btn btn-fill btn-success" (click)="add()">İhale Güncelle</button>
+  
+      </div>
+    </div>
+  </div>
