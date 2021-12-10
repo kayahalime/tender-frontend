@@ -42,7 +42,13 @@
           <app-category-filter></app-category-filter>
          
         </div>
+        
+
         <div class="col-md-9">
+            <div class="d-grid gap-2"  *ngIf="isAuthenticated()">
+            <button type="button" class="btn btn-dark">İhale Ekle</button>
+            </div>
+            <hr>
             <table class="table table-info table-hover" >
                 <thead>
                     <tr>
@@ -51,6 +57,10 @@
                     <th scope="col">İş Adı</th>
                     <th scope="col">Kurum Adı</th>
                     <th scope="col"> </th>
+                    <th *ngIf="isAuthenticated()" scope="col"> </th>
+                   
+               
+                    
                     </tr>
                 </thead>
                 <tbody>
@@ -59,7 +69,13 @@
                     <td>{{tender.price}}</td>
                     <td>{{tender.job}}</td>
                     <td>{{tender.corparation}}</td>
+                    <td><button routerLink="/tenders/tenderdetail/{{tender.tenderId }}"  type="button"  class="btn btn-warning">Teklif Ver</button></td>
+                    <div *ngIf="isAuthenticated()">
+                    
                     <td><button routerLink="/tenders/tenderdetail/{{tender.tenderId }}"  type="button"  class="btn btn-primary">Detaylar</button></td>
+                    <td><button routerLink="/tenders/tenderdetail/{{tender.tenderId }}"  type="button"  class="btn btn-danger">Sil</button></td>
+                    <td><button routerLink="/tenders/tenderdetail/{{tender.tenderId }}"  type="button"  class="btn btn-success">Güncelle</button></td>
+                    </div>
                     </tr>
                     
                 </tbody>

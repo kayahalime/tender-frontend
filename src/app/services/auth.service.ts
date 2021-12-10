@@ -18,7 +18,7 @@ export class AuthService {
   constructor(private httpClient:HttpClient, private localeStorageService:LocaleStorageService,private userService:UserService) { }
 
   login(loginModel:LoginModel):Observable<SingleResponseModel<TokenModel>>{
-    let path = this.apiUrl + "login"
+    let path = this.apiUrl + "auth/login"
     this.setCurrentUser(loginModel.email)
     return this.httpClient.post<SingleResponseModel<TokenModel>>(path, loginModel)
   }
@@ -32,7 +32,7 @@ export class AuthService {
     }
   }
   register(registerModel:RegisterModel):Observable<SingleResponseModel<TokenModel>>{
-    let path = this.apiUrl + "register"
+    let path = this.apiUrl + "auth/register"
     return this.httpClient.post<SingleResponseModel<TokenModel>>(path, registerModel)
   }
   logout(){

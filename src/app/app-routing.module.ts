@@ -5,6 +5,7 @@ import { BidComponent } from './components/bid/bid.component';
 import { CategoryComponent } from './components/category/category.component';
 import { ConcactComponent } from './components/concact/concact.component';
 import { LoginComponent } from './components/login/login.component';
+import { MyProfileComponent } from './components/my-profile/my-profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { TenderDetailComponent } from './components/tender-detail/tender-detail.component';
 import { TenderComponent } from './components/tender/tender.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:"register",component:RegisterComponent},
   {path:"about",component:AboutComponent},
   {path:"contact",component:ConcactComponent},
+  {path:"my-profile",component:MyProfileComponent},
 
 
 ];

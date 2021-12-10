@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Tender } from 'src/app/models/tender';
 import { TenderService } from 'src/app/services/tender.service';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-tender',
@@ -13,7 +14,7 @@ export class TenderComponent implements OnInit {
   tenders: Tender[] = [];
   dataLoaded =false;
   filterText="";
-  constructor(private tenderService: TenderService,private activatedRoute:ActivatedRoute,) { }
+  constructor(private tenderService: TenderService,private activatedRoute:ActivatedRoute,private authService:AuthService) { }
 
   ngOnInit(): void {
     if(this.activatedRoute.params.subscribe(params=>{
@@ -45,6 +46,10 @@ export class TenderComponent implements OnInit {
       
     })
   }
+  isAuthenticated(){
+    return this.authService.isAuthenticated()
+  }
+
   
   }
 

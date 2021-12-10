@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
+
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CategoryComponent } from './components/category/category.component';
@@ -16,11 +18,12 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CategoryPipe } from './pipes/category.pipe';
 import { CategoryFilterComponent } from './components/category-filter/category-filter.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { TenderDetailComponent } from './components/tender-detail/tender-detail.component';
 import { AboutComponent } from './components/about/about.component';
 import { ConcactComponent } from './components/concact/concact.component';
+import { MyProfileComponent } from './components/my-profile/my-profile.component';
 
 @NgModule({
   declarations: [
@@ -39,14 +42,18 @@ import { ConcactComponent } from './components/concact/concact.component';
     FilterPipePipe,
     TenderDetailComponent,
     AboutComponent,
-    ConcactComponent
+    ConcactComponent,
+    MyProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
