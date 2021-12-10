@@ -26,4 +26,10 @@ export class TenderService {
     
     return this.httpClient.get<ListResponseModel<Tender>>(newPath);
   }
+  add(tender:Tender){
+    return this.httpClient.post(this.apiUrl+"tenders/add",tender)
+  }
+  update(tender:Tender){
+    return this.httpClient.post(this.apiUrl+"tenders/update",tender)
+  }
 }

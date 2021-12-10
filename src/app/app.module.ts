@@ -24,6 +24,7 @@ import { TenderDetailComponent } from './components/tender-detail/tender-detail.
 import { AboutComponent } from './components/about/about.component';
 import { ConcactComponent } from './components/concact/concact.component';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
+import { TenderAddComponent } from './components/tender/tender-add/tender-add.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { MyProfileComponent } from './components/my-profile/my-profile.component
     TenderDetailComponent,
     AboutComponent,
     ConcactComponent,
-    MyProfileComponent
+    MyProfileComponent,
+    TenderAddComponent
   ],
   imports: [
     BrowserModule,
