@@ -73,7 +73,7 @@
                     <div *ngIf="isAuthenticated()">
                     
                     <td><button routerLink="/tenders/tenderdetail/{{tender.tenderId }}"  type="button"  class="btn btn-primary">Detaylar</button></td>
-                    <td><button routerLink="tender/delete"  type="button"  class="btn btn-danger">Sil</button></td>
+                    <td><button (click)="deleteTender()"  type="button"  class="btn btn-danger">Sil</button></td>
                     <td><button routerLink="tender/update"  type="button"  class="btn btn-success">Güncelle</button></td>
                     </div>
                     </tr>

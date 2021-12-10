@@ -26,7 +26,7 @@ import { ConcactComponent } from './components/concact/concact.component';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
 import { TenderAddComponent } from './components/tender/tender-add/tender-add.component';
 import { TenderUpdateComponent } from './components/tender/tender-update/tender-update.component';
-import { TenderDeleteComponent } from './components/tender/tender-delete/tender-delete.component';
+
 
 @NgModule({
   declarations: [
@@ -49,7 +49,7 @@ import { TenderDeleteComponent } from './components/tender/tender-delete/tender-
     MyProfileComponent,
     TenderAddComponent,
     TenderUpdateComponent,
-    TenderDeleteComponent
+
   ],
   imports: [
     BrowserModule,
