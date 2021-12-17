@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Tender } from 'src/app/models/tender';
 import { TenderDetails } from 'src/app/models/tenderDetails';
+import { ImageService } from 'src/app/services/image.service';
 import { TenderDetailService } from 'src/app/services/tender-detail.service';
+import { Image } from 'src/app/models/image';
 
 @Component({
   selector: 'app-tender-detail',
@@ -11,14 +14,22 @@ import { TenderDetailService } from 'src/app/services/tender-detail.service';
 export class TenderDetailComponent implements OnInit {
 
   tenderDetails: TenderDetails[];
+  tenderDetail! : TenderDetails;
+  images: Image[];
+  ImageBasePath:string = "https://localhost:37281";
 
   constructor(private tenderDetailService: TenderDetailService,
-    private router: Router,private activatedRoute: ActivatedRoute,) { }
+    private router: Router,private activatedRoute: ActivatedRoute, private imageService: ImageService) { }
+
 
   ngOnInit(): void {
+    
     this.activatedRoute.params.subscribe((params) => {
-      if (params['tenderId']) {
-         this.getTenderDetail(params['tenderId']);
+      console.log("ilk");
+      if (params['id']) {
+       
+        console.log("iki");
+         this.getTenderId(params['id']);
         
       }
      
@@ -28,6 +39,28 @@ export class TenderDetailComponent implements OnInit {
     this.tenderDetailService.getTenderDetail(tenderId).subscribe((response) => {
       this.tenderDetails = response.data;
     });
+  }
+  getTenderId(tenderId:number){
+    console.log("1. adım");
+    this.tenderDetailService.getById(tenderId).subscribe(response=>{
+      console.log("2. adım");
+     this.tenderDetail=response.data
+     console.log(this.tenderDetail.job);
+    })
+  }
+  getTenderImageByTenderId(tenderId:number){
+    this.imageService.getImages(tenderId)
+      .subscribe((response) => {
+        this.images = response.data;
+       
+      });
+  }
+  getCurrentImageClass(image:Image){
+    if(image == this.images[0]){
+      return "carousel-item active"
+    } else {
+      return "carousel-item"
+    }
   }
 
 }

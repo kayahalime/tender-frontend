@@ -39,7 +39,7 @@ export class TenderUpdateComponent implements OnInit {
       adminId: ["", Validators.required],
       clientId: ["",Validators.required],
       price: ["",Validators.required],
-      active: ["",Validators.required],
+      
       startingDate: ["",Validators.required],
       endDate: ["",Validators.required],
       job: ["",Validators.required],

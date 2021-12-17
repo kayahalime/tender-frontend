@@ -1,5 +1,5 @@
 export interface Image{
     imageId:number;
-    path:string;
+    imagePath:string;
     tenderId:number;
   }

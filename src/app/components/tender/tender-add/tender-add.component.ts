@@ -23,7 +23,6 @@ export class TenderAddComponent implements OnInit {
       adminId: ["", Validators.required],
       clientId: ["",Validators.required],
       price: ["",Validators.required],
-      active: ["",Validators.required],
       startingDate: ["",Validators.required],
       endDate: ["",Validators.required],
       job: ["",Validators.required],
@@ -35,10 +34,10 @@ export class TenderAddComponent implements OnInit {
 
   }
   add(){
-    
+    console.log("add")
       let corparation = Object.assign({},this.tenderAddForm.value)
       this.tenderService.add(corparation).subscribe(data=>{
-        console.log("Araç Eklendi","Başarılı")
+        console.log("ihale Eklendi","Başarılı")
         this.router.navigate(["tenders"])
       })
       console.log(corparation)

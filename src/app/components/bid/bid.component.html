@@ -1,1 +1,34 @@
-<p>bid works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div [formGroup]="bidAddForm" class="input-group">
+                <input type="number" type="number" id="price" formControlName="price" class="form-control"
+                    placeholder="teklif" aria-label="Dollar amount (with dot and two decimal places)">
+                <span class="input-group-text">$</span>
+                <span class="input-group-text">0.00</span>
+                <input type="number" class="form-control" type="number" id="tenderId" formControlName="tenderId"
+                    placeholder="tender id">
+                <input type="number" class="form-control" type="number" id="clientId" formControlName="clientId"
+                    placeholder="client id">
+                <button (click)="add()">Teklif Ver</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <table class="table table-info table-hover">
+        <thead>
+            <tr>
+                <th scope="col">tender id</th>
+                <th scope="col">Fiyat</th>
+                <th scope="col">client id</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let bid of bids ">
+                <td scope="row">{{bid.tenderId}}</td>
+                <td>{{bid.price}}</td>
+                <td>{{bid.clientId}}</td>
+            </tr>
+       </tbody> 
+    </table> 
+</div>

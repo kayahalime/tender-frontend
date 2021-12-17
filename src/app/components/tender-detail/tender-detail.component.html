@@ -1,40 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="carousel-inner">
+        <div *ngFor="let image of images; index as i; first as firstImage" class="carousel-item align-self-center"
+          [ngClass]="{ active: firstImage }" style="height: 100%; width: 100%">
+          <img src="{{ ImageBasePath }}{{ image.imagePath }}" class="img-thumbnail"
+            alt="  {{ image.imagePath }}" />
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <table class="table table-success table-striped">
 
- 
-      <table *ngFor="let tenderdetail of tenderDetails"  class="table table-success table-striped">
-       
-        <tbody >
-          
+        <tbody>
+
           <tr>
             <th scope="row">Kategori</th>
-            <td>{{ tenderdetail.categoryName }}</td>
+            <td>{{ tenderDetail.categoryName }}</td>
           </tr>
           <tr>
             <th scope="row">Fiyat</th>
-            <td>{{ tenderdetail.price }}</td>
+            <td>{{ tenderDetail.price }}</td>
           </tr>
           <tr>
             <th scope="row">Durum</th>
-            <td>{{ tenderdetail.active }}</td>
+            <td>{{ tenderDetail.active }}</td>
           </tr>
           <tr>
             <th scope="row">Başlangıç Tarihi</th>
-            <td>{{ tenderdetail.startingDate }}</td>
+            <td>{{ tenderDetail.startingDate }}</td>
           </tr>
           <tr>
             <th scope="row">Bitiş Tarihi</th>
-            <td>{{ tenderdetail.endDate }}</td>
+            <td>{{ tenderDetail.endDate }}</td>
           </tr>
           <tr>
             <th scope="row">İş Adı</th>
-            <td>{{ tenderdetail.job }}</td>
+            <td>{{ tenderDetail.job }}</td>
           </tr>
           <tr>
             <th scope="row">Kurum Adı</th>
-            <td>{{ tenderdetail.corparation }}</td>
+            <td>{{ tenderDetail.corparation }}</td>
           </tr>
-         
-       
+
+
         </tbody>
-      
+
       </table>
- 
+    </div>
+  </div>
+</div>

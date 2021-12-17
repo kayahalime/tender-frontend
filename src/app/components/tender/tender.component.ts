@@ -59,10 +59,12 @@ export class TenderComponent implements OnInit {
      this.tender=response.data
     })
   }
-  deleteTender() {
-    let tenderModule: Tender = { id: this.getTenderId, ...this.tenderEditForm.value };
-    this.tenderService.delete(tenderModule).subscribe((response) => {
-      
+  deleteTender(tender:Tender) {
+    console.log("delete")
+
+    
+    this.tenderService.delete(tender).subscribe((response) => {
+      console.log("delete2")
       this.router.navigate(['', 'tenders']);
     });
   }

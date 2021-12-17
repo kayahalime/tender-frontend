@@ -19,7 +19,7 @@ const routes: Routes = [
   {path:"tenders/category/:categoryId",component:TenderComponent},
   {path:"category",component:CategoryComponent},
   {path:"bids",component:BidComponent},
-  {path:"tenders/tenderdetail/:tenderId",component:TenderDetailComponent},
+  {path:"tenders/tenderdetail/:id",component:TenderDetailComponent},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
   {path:"about",component:AboutComponent},

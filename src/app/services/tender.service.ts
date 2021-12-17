@@ -37,7 +37,7 @@ export class TenderService {
     return this.httpClient.post(this.apiUrl+"tenders/delete",tender)
   }
   getById(tenderId:number){
-    let newPath=this.apiUrl+"tenders/getbyid?tenderId="+tenderId;
+    let newPath=this.apiUrl+"tenders/getbyid?id="+tenderId;
     return this.httpClient.get<SingleResponseModel<Tender>>(newPath);
   }
 }

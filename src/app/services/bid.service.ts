@@ -14,4 +14,7 @@ export class BidService {
   getBids():Observable<ListResponseModel<Bid>>{
     return this.httpClient.get<ListResponseModel<Bid>>(this.apiUrl+"bids/getall");
   }
+  add(bid:Bid){
+    return this.httpClient.post(this.apiUrl+"bids/add",bid)
+  }
 }
