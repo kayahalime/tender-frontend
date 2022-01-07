@@ -38,7 +38,7 @@ export class UserService {
     console.log(user)
     return this.httpClient.post<ResponseModel>(this.apiUrl + 'users/updateprofile', {
       user:{
-        'id': user.id,
+        'id': user.userId,
         'firstName': user.firstName,
         'lastName': user.lastName,
         'email': user.email,
@@ -49,6 +49,9 @@ export class UserService {
   }
   getById(userId:number):Observable<SingleResponseModel<Register>>{
     return this.httpClient.get<SingleResponseModel<Register>>(this.apiUrl+"getbyid?userId="+userId);
+  }
+  getUsers():Observable<ListResponseModel<User>>{
+    return this.httpClient.get<ListResponseModel<User>>(this.apiUrl+"users/getall");
   }
 
 }

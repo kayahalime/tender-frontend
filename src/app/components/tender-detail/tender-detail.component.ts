@@ -17,6 +17,7 @@ export class TenderDetailComponent implements OnInit {
   tenderDetail! : TenderDetails;
   images: Image[];
   ImageBasePath:string = "https://localhost:37281";
+  image : Image;
 
   constructor(private tenderDetailService: TenderDetailService,
     private router: Router,private activatedRoute: ActivatedRoute, private imageService: ImageService) { }
@@ -30,6 +31,7 @@ export class TenderDetailComponent implements OnInit {
        
         console.log("iki");
          this.getTenderId(params['id']);
+         this.getTenderImageByTenderId(params["id"]);
         
       }
      
@@ -41,18 +43,20 @@ export class TenderDetailComponent implements OnInit {
     });
   }
   getTenderId(tenderId:number){
-    console.log("1. adım");
+    
     this.tenderDetailService.getById(tenderId).subscribe(response=>{
-      console.log("2. adım");
+      
      this.tenderDetail=response.data
      console.log(this.tenderDetail.job);
     })
   }
   getTenderImageByTenderId(tenderId:number){
+    console.log("1. adım");
     this.imageService.getImages(tenderId)
       .subscribe((response) => {
+        
         this.images = response.data;
-       
+        console.log(this.image.imagePath);
       });
   }
   getCurrentImageClass(image:Image){

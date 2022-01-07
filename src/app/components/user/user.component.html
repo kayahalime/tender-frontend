@@ -1,0 +1,18 @@
+<table class="table table-info table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Kullanıcı id</th>
+            <th scope="col">Kullanıcı Adı</th>
+            <th scope="col">Kullanıcı Soyadı</th>
+            <th scope="col">Kullanıcı Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor="let user of users ">
+            <td scope="row">{{user.userId}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.email}}</td>
+        </tr>
+   </tbody> 
+</table> 

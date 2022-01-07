@@ -4,6 +4,7 @@ import { FormBuilder } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { LocaleStorageService } from 'src/app/services/locale-storage.service';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -42,10 +43,12 @@ export class LoginComponent implements OnInit {
       let loginModel = Object.assign({},this.loginForm.value)
       this.authService.login(loginModel).subscribe(response=>{
         this.localeStorageService.set("token", response.data.token) 
+        
         console.log("oldu")
         this.router.navigate(["tenders"])
       }, responseError=>{
         console.log("e-posta veya parola hatalı")
+        
       }
       )
     }

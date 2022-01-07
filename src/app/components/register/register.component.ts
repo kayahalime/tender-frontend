@@ -30,7 +30,8 @@ export class RegisterComponent implements OnInit {
       password:['',Validators.required],
       confirmPassword:['',Validators.required],
       firstName:['',Validators.required],
-      lastName:['',Validators.required]
+      lastName:['',Validators.required],
+      code:['',Validators.required]
     })
     console.log("deneme2")
   }

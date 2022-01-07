@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+        
+          <app-category-filter></app-category-filter>
+         
+        </div>
+        
+
+        <div class="col-md-9">
+            <div class="d-grid gap-2"  *ngIf="isAuthenticated()">
+            <button type="button" routerLink="/tender/add" class="btn btn-dark">İhale Ekle</button>
+            <button type="button" routerLink="/tenders" class="btn btn-dark">İhale Listesi</button>
+            <button type="button" routerLink="/user/list" class="btn btn-dark">Kullanıcı Listesi</button>
+            <button type="button" routerLink="/admin/list" class="btn btn-dark">Admin Tanımlama/Görüntüleme</button>
+            </div>
+            <hr>
+            <table class="table table-info table-hover" >
+                <thead>
+                    <tr>
+                    <th scope="col">Kategori id</th>
+                    <th scope="col">Fiyat</th>
+                    <th scope="col">İş Adı</th>
+                    <th scope="col">Kurum Adı</th>
+                    <th scope="col"> </th>
+                    
+                    <th *ngIf="isAuthenticated()" scope="col"> </th>
+                   
+               
+                    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr  *ngFor="let tender of tenders ">
+                    <td scope="row">{{tender.categoryId}}</td>
+                    <td>{{tender.price}}</td>
+                    <td>{{tender.job}}</td>
+                    <td>{{tender.corparation}}</td>
+                    <td><button routerLink="/bids"  type="button"  class="btn btn-warning">Teklif Ver</button></td>
+                    <div *ngIf="isAuthenticated()">
+                    <td><button type="button" class="btn btn-success"  style="margin-bottom: 5px;" routerLink="/image/add//{{tender.tenderId}}">Resim Ekle</button></td>
+                    <td><button routerLink="/tenders/tenderdetail/{{tender.tenderId }}"  type="button"  class="btn btn-primary">Detaylar</button></td>
+                    <td><button (click)="deleteTender(tender)"  type="button"  class="btn btn-danger">Sil</button></td>
+                    
+                    
+                    </div>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+</div>

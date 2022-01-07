@@ -26,7 +26,7 @@ export class ImageService {
     return this.httpClient.post<ResponseModel>(path, image);
   }
   upload(imageAdd:Image): Observable<ResponseModel> {
-    let newPath = this.apiUrl + "carimages";
+    let newPath = this.apiUrl + "tenderimages";
     return this.httpClient.post<ResponseModel>(newPath,imageAdd);
   }
 

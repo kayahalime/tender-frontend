@@ -1,84 +1,48 @@
-<!-- <h3>tender</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
 
-<table>
-    <tr>
-        <td>tender id-</td>
-        <br><br>
-        <td>category id-</td>
-        <br><br>
-        <td>price</td>
-    </tr>
-    <tr *ngFor="let tender of tenders">
-        <td>{{tender.tenderId}}</td>
-        <br><br>
-        <td>{{tender.categoryId}}</td>
-        <br><br>
-        <td>{{tender.price}}</td>
-    </tr>
-</table> -->
+      <app-category-filter></app-category-filter>
 
-<!-- <div
-    class="col-12 col-sm-11 col-md-9 col-lg-5 col-xl-4"
-    *ngFor="let tender of tenders "
-    style="width: 15rem; padding: 5px; margin: 5px"
->
-    <li class="list-group-item">
-        <b>Price:</b
-        ><span style="float: right"> {{ tender.price }}</span>
-    </li>
-    <li class="list-group-item">
-        <b>category id:</b><span style="float: right">{{ tender.categoryId }}</span>
-    </li>
-    <li class="list-group-item">
-        <b>İş Adı:</b><span style="float: right">{{ tender.job}}</span>
-    </li>
-    <li class="list-group-item">
-        <b>Kurum Adı:</b><span style="float: right">{{ tender.corparation }}</span>
-    </li> -->
- <div class="container">
-    <div class="row">
-        <div class="col-md-3">
-        
-          <app-category-filter></app-category-filter>
-         
-        </div>
-        
+    </div>
 
-        <div class="col-md-9">
-            <div class="d-grid gap-2"  *ngIf="isAuthenticated()">
-            <button type="button" routerLink="tender/add" class="btn btn-dark">İhale Ekle</button>
+    <div class="col-md-10">
+      <div class="row" id="ads">
+        <div class="col-12 col-sm-11 col-md-9 col-lg-5 col-xl-4" *ngFor="let tender of tenders "
+          style="width: 15rem; padding: 5px; margin: 5px">
+          <div class="card mb-4 mr-4">
+            <div class="card rounded">
+              <img src="{{ imageBasePath }}{{ getImage(tender) }}" class="card-img-top" alt="" />
+              <div class="card-image-overlay m-auto">
+                <ul class="list-group list-group-flush">
+
+                  <li class="list-group-item">
+                    <b>İş Adı: </b><span style="float: right"> {{ tender.job }}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Kurum Adı:</b><span style="float: right">{{ tender.corparation }}</span>
+                  </li>
+
+                  <li class="list-group-item">
+                    <b>Fiyat:</b><span style="float: right">{{ tender.price }}
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body text-center">
+                <div class="ad-title text-center">
+                  <h5>{{tender.job}} </h5>
+                </div>
+                <div class="d-grid gap-5">
+                  <section class="d-grid gap-2">
+                    <button routerLink="/bids" type="button" class="btn btn-danger">
+                      Teklif Ver
+                    </button>
+                  </section>
+                </div>
+              </div>
             </div>
-            <hr>
-            <table class="table table-info table-hover" >
-                <thead>
-                    <tr>
-                    <th scope="col">Kategori id</th>
-                    <th scope="col">Fiyat</th>
-                    <th scope="col">İş Adı</th>
-                    <th scope="col">Kurum Adı</th>
-                    <th scope="col"> </th>
-                    <th *ngIf="isAuthenticated()" scope="col"> </th>
-                   
-               
-                    
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr  *ngFor="let tender of tenders ">
-                    <td scope="row">{{tender.categoryId}}</td>
-                    <td>{{tender.price}}</td>
-                    <td>{{tender.job}}</td>
-                    <td>{{tender.corparation}}</td>
-                    <td><button routerLink="/bids"  type="button"  class="btn btn-warning">Teklif Ver</button></td>
-                    <div *ngIf="isAuthenticated()">
-                    
-                    <td><button routerLink="/tenders/tenderdetail/{{tender.tenderId }}"  type="button"  class="btn btn-primary">Detaylar</button></td>
-                    <td><button (click)="deleteTender(tender)"  type="button"  class="btn btn-danger">Sil</button></td>
-                    
-                    </div>
-                    </tr>
-                    
-                </tbody>
-            </table>
+          </div>
         </div>
-</div>
+      </div>
+    </div>

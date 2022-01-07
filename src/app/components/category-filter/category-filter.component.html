@@ -4,7 +4,7 @@
    <div class="my-1">
     <input type="text" [(ngModel)]="filterText" class="form-control" id="category" placeholder="Kategori ara...">
   </div>
-  <li class="list-group-item list-group-item-danger" [class] = "getAllCategoryClass()" routerLink = "/tenders">Tüm Kategoriler</li>
+  <li class="list-group-item list-group-item-danger" [class] = "getAllCategoryClass()" routerLink = "/tenders">Kategoriler</li>
   <ul class="list-group">
   
       <li class="list-group-item list-group-item-warning" (click)="setCurrentCategory(category)"

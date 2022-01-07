@@ -14,4 +14,7 @@ export class AdminService {
   getAdmins():Observable<ListResponseModel<Admin>>{
     return this.httpClient.get<ListResponseModel<Admin>>(this.apiUrl+"admins/getall");
   }
+  add(admin:Admin){
+    return this.httpClient.post(this.apiUrl+"admins/add",admin)
+  }
 }

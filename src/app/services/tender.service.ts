@@ -15,6 +15,9 @@ export class TenderService {
   getTenders():Observable<ListResponseModel<Tender>>{
     return this.httpClient.get<ListResponseModel<Tender>>(this.apiUrl+"tenders/getall");
   }
+  getTenderDetail():Observable<ListResponseModel<Tender>>{
+    return this.httpClient.get<ListResponseModel<Tender>>(this.apiUrl+"tenders/gettenderdetail");
+  }
   getTendersByCategory(categoryId:number):Observable<ListResponseModel<Tender>>{
     let newPath=this.apiUrl + "tenders/getbycategory?categoryId="+categoryId
     return this.httpClient.get<ListResponseModel<Tender>>(newPath);

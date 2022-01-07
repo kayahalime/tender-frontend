@@ -9,4 +9,5 @@ export interface Tender{
     endDate:Date;
     job: string;
     corparation: string;
+    imagePath:string;
   }

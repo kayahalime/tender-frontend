@@ -1,1 +1,27 @@
-<p>admin works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div [formGroup]="adminAddForm" class="input-group">
+               
+                <input type="number" class="form-control" type="number" id="userId" formControlName="userId"
+                    placeholder="user id">
+                <button (click)="add()">Yeni Admin Tanımla</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <table class="table table-info table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Admin Id</th>
+                <th scope="col">User Id</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let admin of admins ">
+                <td scope="row">{{admin.adminId}}</td>
+                <td>{{admin.userId}}</td>
+            </tr>
+       </tbody> 
+    </table> 
+</div>
