@@ -33,7 +33,9 @@ export class LoginComponent implements OnInit {
    
   }
   isAuthenticated(){
+  
     return this.authService.isAuthenticated()
+
   }
 
   login(){
@@ -42,10 +44,15 @@ export class LoginComponent implements OnInit {
       
       let loginModel = Object.assign({},this.loginForm.value)
       this.authService.login(loginModel).subscribe(response=>{
-        this.localeStorageService.set("token", response.data.token) 
+        this.localeStorageService.set("token", response.data.token)
+        if(this.loginForm.value.email=="halime@gmail.com") {
+          this.router.navigate(["/tender/list"])
+        }
+        else{
+          this.router.navigate(["tenders"])
+        }
         
-        console.log("oldu")
-        this.router.navigate(["tenders"])
+        
       }, responseError=>{
         console.log("e-posta veya parola hatalı")
         

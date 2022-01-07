@@ -25,6 +25,7 @@ export class AuthService {
 
   isAuthenticated(){
     if(this.localeStorageService.get("token")){
+      
       return true;
     }
     else{
@@ -41,10 +42,11 @@ export class AuthService {
   }
 
 
-  private setCurrentUser(email:string){
+   setCurrentUser(email:string){
     this.userService.getByEmail(email).subscribe(response => {
       let user = response.data
       this.localeStorageService.set("user", user)
     })
   }
+  
 }
